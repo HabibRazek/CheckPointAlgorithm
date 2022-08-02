@@ -8,16 +8,14 @@ BEGIN
         Write("write a string");
         Read(str);
     UNTIL (str[length-1]==".")
-    for(i=0; i<str.length; i++){
+    FOR(i FROM 0 TO str.length-1 STEP 1;)
         IF (str[i]==' ')
-        { THEN
-            number_of_words+=1;
+        THEN
+            number_of_words++;
         END_IF
-        }
         IF (str[i]=="a" || str[i]=="e" || str[i]=="o" || str[i]=="i" || str[i]=="u")
-        { THEN
-        number_of_vowels+=1;
-        }
+        THEN
+        number_of_vowels++;
         END_IF
-    }
+        END_FOR
 END

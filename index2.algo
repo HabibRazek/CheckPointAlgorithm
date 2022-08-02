@@ -1,29 +1,38 @@
 ALGORITHM Seconde Task
 VAR
     sum:INTEGER:=0;
-    set1 : ARRAY_OF INTEGER[n];
-    set2 : ARRAY_OF INTEGER[n];
+    set1 : ARRAY_OF INTEGER[50];
+    set2 : ARRAY_OF INTEGER[50];
+    n,m,i : INTEGER;
 BEGIN
     Write("Enter the size of set1");
-    Read(set1);
-    Writ("Enter the size of set2");
-    Read(set2);
+    Read(n);
+    Write("Enter the size of set2");
+    Read(m);
 
     
     Write("Fill set1 with integer values");
-    for (int i = 0; i < n; i++){
+    FOR i FROM 0 TO n - 1 STEP 1
         Read(set1[i]);
-    }
-    Write("Fill set2 with integer values");
-    for (int i = 0; i < n; i++){
-        Read(set2[i]);
-    }
+        END_FOR
 
-    for (int i = 0; i < n; i++){
+    Write("Fill set2 with integer values");
+
+    FOR i FROM 0 TO n - 1 STEP 1
+        Read(set2[i]);
+    END_FOR
+    FOR i FROM 0 TO n - 1 STEP 1
         IF (set1[i] == set2[i]) THEN
             sum:=set1[i]+sum;
         END_IF
-    }
-    return sum;
+    END_FOR
+
+    FOR i FROM 0 TO n - 1 STEP 1
+        IF (set1[i] == set2[i]) THEN
+            sum:=set2[i]+sum;
+        END_IF
+    END_FOR
+    
+    Write ("The sum is =:" sum);
 
 END
