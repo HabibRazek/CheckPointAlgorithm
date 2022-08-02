@@ -1,0 +1,23 @@
+ALGORITHM First Task
+VAR
+    str:STRING:="";
+    number_of_words:INTEGER:=0;
+    number_of_vowels:INTEGER:=0;
+BEGIN
+    REPEAT
+        Write("write a string");
+        Read(str);
+    UNTIL (str[length-1]==".")
+    for(i=0; i<str.length; i++){
+        IF (str[i]==' ')
+        { THEN
+            number_of_words+=1;
+        END_IF
+        }
+        IF (str[i]=="a" || str[i]=="e" || str[i]=="o" || str[i]=="i" || str[i]=="u")
+        { THEN
+        number_of_vowels+=1;
+        }
+        END_IF
+    }
+END
